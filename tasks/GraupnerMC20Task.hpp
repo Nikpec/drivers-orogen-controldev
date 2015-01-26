@@ -31,7 +31,6 @@ namespace controldev {
         virtual void processIO();
         MC20Output out;
     private:
-        controldev::RawCommand rcmd;
 
 
     public:
