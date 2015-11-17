@@ -70,11 +70,24 @@ void GraupnerMC20Task::processIO()
     std::vector<double> axis2;
     axis2.push_back((out.channel[5]-12000)/3200.0);
     axis2.push_back((out.channel[6]-12000)/3200.0);
+    axis2.push_back(out.channel[11]);
 
     rcmd.axisValue.push_back(axis);
     rcmd.axisValue.push_back(axis2);
-    _raw_command.write(rcmd);
 
+    for (int i=7; i <= 12; i++){
+        if (out.channel[i] < 11000) {
+            rcmd.buttonValue.push_back(1);
+        } else {
+            rcmd.buttonValue.push_back(0);
+        }
+        if (out.channel[i] > 13000){
+            rcmd.buttonValue.push_back(1);
+        } else {
+            rcmd.buttonValue.push_back(0);
+        }
+    }
+    _raw_command.write(rcmd);
     //TODO Buttons and scaling
 
 }
