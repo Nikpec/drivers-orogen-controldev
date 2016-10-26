@@ -1,8 +1,9 @@
 #ifndef CONTROLDEVTYPES_HPP
 #define CONTROLDEVTYPES_HPP
 
-#include <base/actuators/commands.h>
 #include <vector>
+#include <base/Time.hpp>
+#include <string>
 
 namespace controldev
 {

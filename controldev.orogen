@@ -96,6 +96,7 @@ task_context "SliderboxTask" do
         doc("Path to the joystick device")
 end
 
+=begin
 # This task converts Raw commands like them they are generated from the Joystick
 # To Motion Command2D for direct Robot control
 task_context "RawJoystickToMotion2D" do
@@ -148,6 +149,7 @@ task_context "GenericRawToMotion2D" do
 
     port_driven :raw_command
 end
+=end
      
 
 if has_typekit?('canbus')
